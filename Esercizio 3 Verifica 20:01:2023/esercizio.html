@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Esercizio 3 Verifica 20/01/2023 - Cavone Antonio - 4ITIAB</title>
+</head>
+<body>
+	<form id="form" method="get">
+		<label for="userNum">Inserisci un numero: </label>
+		<input type="number" id="userNum" name="userNum">
+		<input type="submit" id="subBtn" value="Submit">
+		<button id="reset">Reset</button>
+	</form>
+	<script type="text/javascript">
+
+		let form = document.querySelector("form")
+		let resetBtn = document.querySelector("#reset")
+
+		function generateRandom(min = 0, max = 100) {
+
+		    // find diff
+		    let difference = max - min;
+
+		    // generate random number 
+		    let rand = Math.random();
+
+		    // multiply with difference 
+		    rand = Math.floor( rand * difference);
+
+		    // add with min value 
+		    rand = rand + min;
+
+		    return rand;
+		}
+
+
+		console.log(generateRandom());
+
+	
+		form.addEventListener("submit", function(event){
+			event.preventDefault()
+			let numInput = document.querySelector("#userNum")
+			let numValue = numInput.value
+			let randNum = generateRandom()
+			
+		
+			numValue = parseInt(numValue)
+			console.log(typeof numValue)
+			console.log(numValue)
+			if(numValue > randNum){
+				alert("Numero troppo alto!")
+			}else{
+				if(numValue < randNum){
+					alert("Numero troppo basso!")
+				}else{
+					alert("Numero indovinato!")
+				}
+			}	
+		})
+
+		resetBtn.addEventListener("click", function(event){
+			event.preventDefault();
+			numValue = 0
+			generateRandom()
+		})
+
+	</script>
+</body>
+</html>

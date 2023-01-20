@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Esercizio 4 Verifica 20/01/2023 - Cavone Antonio - 4ITIAB</title>
+</head>
+<body>
+	<form id="form">
+		<label for="userNum">Inserisci un numero</label>
+		<input type="number" id="userNum" name="userNum">
+		<input type="submit" name="Submit" id="subBtn">
+	</form>
+	<script type="text/javascript">
+		let divisore
+		let cont
+		let form = document.querySelector("form")
+		
+		form.addEventListener("submit", function(event){
+			event.preventDefault()
+			let numInput = document.querySelector("#userNum")
+			let numValue = numInput.value
+			numeroPrimo(numValue)
+		})
+
+		function numeroPrimo(numValue){
+			if(numValue == 1 || numValue == 2){
+				(numValue + " è un numero primo")
+			}
+			for(var i = 2; i < numValue; i++){
+				if(numValue % i == 0){
+					alert(numValue + " non è un numero primo!")
+				}
+			}
+			alert(numValue + " è un numero primo!")
+		}
+
+		
+	</script>
+</body>
+</html>

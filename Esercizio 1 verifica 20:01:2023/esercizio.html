@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<title>Verifica 20/01/2023 - Cavone Antonio - 4ITIAB</title>
+</head>
+<body>
+	<div class="content">
+		<h1>Cambia sfondo</h1>
+		<p>Seleziona un bottone per cambiare sfondo	</p>
+		<form>
+			<button id="red">Rosso</button>
+			<button id="blue">Blu</button>
+			<button id="green">Verde</button>
+			<button id="yellow">Giallo</button>
+			<button id="reset">Reset</button>
+		</form>
+		<form id="#form" method="get">
+			<label for="hexcode">Inserisci un codice colore esadecimale(scrivi anche il #): </label>
+			<input type="text" id="hexCode" name="hexColor">
+			<input type="submit" value="Submit" id="subBtn">
+		</form>
+	</div>
+	<div id="output"></div> 
+	<script type="text/javascript">
+		let redBtn = document.querySelector("#red");	
+		let bluBtn = document.querySelector("#blue");
+		let greenBtn = document.querySelector("#green");
+		let yellowBtn = document.querySelector("#yellow");
+		let resetBtn = document.querySelector("#reset")
+		let output = document.querySelector("#output");
+		let form = document.querySelectorAll("#form")
+		
+		subBtn.addEventListener("click", function(event){
+			event.preventDefault()
+			let hexInput = document.querySelector("#hexCode")
+			let hexValue = hexInput.value
+			output.style.backgroundColor = hexValue
+		})
+
+		redBtn.addEventListener("click", function(event){
+			event.preventDefault();
+			output.style.backgroundColor = "red";
+		})
+
+		bluBtn.addEventListener("click", function(event){
+			event.preventDefault();
+			output.style.backgroundColor = "blue";
+		})
+
+		greenBtn.addEventListener("click", function(event){
+			event.preventDefault();
+			output.style.backgroundColor = "green";
+		})
+
+		yellowBtn.addEventListener("click", function(event){
+			event.preventDefault();
+			output.style.backgroundColor = "yellow";
+		})
+
+		resetBtn.addEventListener("click", function(event){
+			event.preventDefault();
+			output.style.backgroundColor = "white";
+		})
+	</script>
+</body>
+</html>
